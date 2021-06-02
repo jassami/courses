@@ -1,0 +1,22 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    width: 800px;
+    height: 500px;
+    background-color: bisque;
+    margin: auto;
+    padding: 20px;
+}
+h2{
+    padding: 20px;
+    text-align: center;
+}
+a{
+    display: block;
+    padding: 5px;
+}
+p{
+    padding: 5px;
+}

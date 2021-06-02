@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add a student to all bootcamp courses</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style1.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Add a new course</h2>
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="/add_course" method="POST">
+                {% csrf_token %}
+                <label for="">Name:</label>
+                <input type="text" name="name"><br>
+                <label for="">Description:</label>
+                <input type="text" name="des"><br>
+                <input type="submit" id="button" value="Add">
+            </form>
+            <h2>Courses</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Discription</th>
+                    <th>Date Added</th>
+                    <th>Action</th>
+                    <th>Comment</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for course in all_courses %}
+                        <tr>
+                            <td>{{course.cor_name}}</td>
+                            <td>{{course.description.description}}</td>
+                            <td>{{course.created_at}}</td>
+                            <td><a href="/courses/destroy/{{course.id}}">remove</a></td>
+                            <td><a href="/comments/{{course.id}}">comment</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

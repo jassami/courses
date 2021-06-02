@@ -1,0 +1,45 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    width: 800px;
+    height: 500px;
+    background-color: bisque;
+    margin: auto;
+    padding: 20px;
+}
+h2{
+    padding: 20px;
+    text-align: center;
+}
+table{
+    border: 1px black solid;
+    width: 700px;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+th, td{
+    border-right: solid black 1px;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #daf7eb;
+}
+th{
+    background-color: #bbebec
+}
+.list{
+    margin-left: 100px;
+}
+h3{
+    padding: 20px;
+}
+#button{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(62, 235, 235);
+    border-radius: 5px;
+    margin: 30px 100px;
+    box-shadow: 2px 2px gray;
+}
